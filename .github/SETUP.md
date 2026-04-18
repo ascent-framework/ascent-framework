@@ -63,7 +63,7 @@ git clone https://github.com/ascent-framework/ascent-framework.git
 cd ascent-framework
 
 # Create directory structure
-mkdir -p docs/{framework,preregistration,paper1,archive,archive/operator-coordinate-compression}
+mkdir -p docs/{framework,preregistration,paper1,exploration,archive,archive/operator-coordinate-compression}
 
 # Copy files from Claude-generated documents
 cp [downloaded files] .
@@ -102,6 +102,8 @@ docs/patent/claim_candidates.md                          → archive/operator-co
 ```
 
 Add `docs/archive/README.md` explaining what's there and why.
+
+Current archive destination: `docs/archive/operator-coordinate-compression/`.
 
 ---
 

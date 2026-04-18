@@ -201,7 +201,7 @@ Options for external feedback (solo researcher):
 ### Month 15–16: Patent Preparation
 
 Tasks:
-- [ ] Update `docs/archive/operator-coordinate-compression/docs/patent/`
+- [ ] Update documents in `docs/archive/operator-coordinate-compression/`
   with v6.1 framework language
 - [ ] Add SpectralQuant to prior_art_mapping.md (critical missing entry)
 - [ ] Rewrite claim_candidates.md as actual claim format

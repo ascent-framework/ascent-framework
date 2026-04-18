@@ -52,21 +52,30 @@ ascent-arch/          ← Paper 2 architecture prototype       [coming M13+]
 ascent-framework/
 ├── README.md
 ├── ROADMAP.md
-├── SETUP.md                          ← GitHub setup guide
+├── .github/
+│   └── SETUP.md                      ← GitHub setup guide
 ├── docs/
 │   ├── framework/
 │   │   ├── v6.1.md                   ← Canonical framework document
 │   │   └── evolution.md              ← v1 → v6.1 version history
 │   ├── preregistration/
-│   │   ├── v1.0.md                   ← Original draft (Codex)
-│   │   ├── v1.1.md                   ← First revision
-│   │   └── v1.2.md                   ← Current — OSF registered
+│   │   └── v1.2.md                   ← Current preregistration draft
 │   ├── paper1/
-│   │   └── outline.md                ← Paper 1 structure
-│   ├── evidence-mapping.md           ← Prior work supporting ASCENT
+│   │   ├── outline.md                ← Paper 1 structure
+│   │   └── evidence-mapping.md       ← Prior work supporting ASCENT
+│   ├── exploration/
+│   │   └── future-directions.md      ← Architecture synthesis (non-registered)
 │   └── archive/                      ← Previous project documents
 └── .gitignore
 ```
+
+Current repo note: the active pre-registration file is `docs/preregistration/v1.2.md`,
+and archived predecessor documents are stored under
+`docs/archive/operator-coordinate-compression/`.
+ASCENT note archives are preserved under
+`docs/archive/ascent-framework-notes/`.
+The temporary draft workspace has been absorbed into `docs/` and retained only
+through the canonical archive materials above.
 
 ---
 
@@ -138,7 +147,7 @@ B_model[T] = B_shared[T] + B_adaptive[T]
 | Anthropic SAE (2024+) | Interpretable substrate structure |
 | Ansuini et al. (2019) | Low intrinsic dimension |
 
-Full mapping: [`docs/evidence-mapping.md`](docs/evidence-mapping.md)
+Full mapping: [`docs/paper1/evidence-mapping.md`](docs/paper1/evidence-mapping.md)
 
 ---
 
@@ -163,7 +172,7 @@ Full plan: [`ROADMAP.md`](ROADMAP.md)
 
 ```
 Framework version:    v6.1 (stable)
-Pre-registration:     v1.2 (OSF pending)
+Pre-registration:     v1.2 (draft, OSF pending)
 Experiments:          Phase 0 — Foundation
 Current phase:        Setup + OSF registration
 ```
@@ -174,7 +183,7 @@ Current phase:        Setup + OSF registration
 
 ASCENT evolved from [`operator-coordinate-compression`](https://github.com/che-yjwj/operator-coordinate-compression), which investigated LLM weight compression through coordinate system selection. Core insight preserved: **the geometry of parameter space determines compression efficiency**. Key evolution: from "find the right coordinates" to "understand the control structure of the substrate."
 
-The previous project's documents are preserved in `docs/archive/`.
+The previous project's documents are preserved in `docs/archive/operator-coordinate-compression/`.
 
 ---
 
