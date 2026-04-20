@@ -78,13 +78,22 @@ or Kaggle capacity.
 Phase 0 artifacts should be saved in a way that survives notebook/session
 restarts.
 
-Preferred order:
+**Fixed for Phase 0:**
 
-1. Kaggle Dataset for checkpoints and exported artifacts
-2. Google Drive mirror for backup
-3. Local repository for small derived outputs and metadata only
+1. **Kaggle Dataset** — primary storage for adapter checkpoints and exported artifacts
+2. **Google Drive** — backup mirror only; sync after each completed session
+3. **Local repository** — small derived outputs and metadata only (run logs, provenance JSON, SVD summaries)
 
-Large model checkpoints should not be treated as repository artifacts.
+HuggingFace Hub is deferred until Phase 1 public release is needed.
+Do not leave storage destination ambiguous across sessions — pick one path per artifact type and log it in the run report.
+
+Large model checkpoints must not be committed to the repository.
+
+**Required runtime log entries (per session):**
+
+- GPU model assigned by Kaggle (`nvidia-smi` first line)
+- Precision in use (`torch.cuda.is_bf16_supported()`)
+- Per-step training time (enables cross-hardware comparison)
 
 ---
 
