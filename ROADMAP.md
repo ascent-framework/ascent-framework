@@ -64,8 +64,8 @@ Setup H1a   H1-H2  Paper Draft  Submit  Patent  Conf  P2 proto
 
 ### Deliverables
 
-- [ ] OSF pre-registration v1.2 public (with URL)
-- [ ] GitHub org + 3 repos created
+- [x] OSF pre-registration v1.2 public (https://osf.io/qgxyj/overview)
+- [x] GitHub org + 3 repos created
 - [ ] TinyLoRA reproduces GSM8K ≥ 85% with ≤ 100 params on 1.5B
 - [ ] Full pipeline: train → extract → SVD working on 1 task
 

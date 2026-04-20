@@ -191,6 +191,6 @@ Source: condense from `docs/preregistration/v1.2.md`
 
 - [ ] Exact venue target (which workshop?)
 - [ ] Whether to include 7B experiments (requires cloud)
-- [ ] SAE availability for H1c (Gemma SAE exists, Qwen SAE?)
+- [x] SAE availability for H1c (Gemma Scope SAE available via google/gemma-2-2b-it)
 - [ ] Author list (solo or with collaborator?)
 - [ ] License for code/data release
