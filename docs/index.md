@@ -29,7 +29,7 @@
 ### Exploration
 
 - `exploration/future-directions.md`: non-canonical architecture synthesis and component-prior map (not part of Paper 1 registered claims)
-- `exploration/compute-options.md`: alternative model (Gemma 4, TinyLlama) and free GPU platform analysis (Kaggle, Colab)
+- `exploration/compute-options.md`: registered model lineup (v1.3) and free GPU platform analysis (Kaggle, Colab)
 
 ### Archive
 
