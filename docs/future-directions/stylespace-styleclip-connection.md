@@ -1,9 +1,24 @@
 # StyleSpace / StyleCLIP과 ASCENT
 
-**문서 유형:** Future Research Direction / External Connection  
-**상태:** Informational  
-**범위:** ASCENT의 현재 아이디어를 StyleSpace / StyleCLIP 및 그 후속 논문들과 비교하여 구조적 유사성과 차이를 정리  
-**날짜:** 2026-04-25
+**Document Type:** Future Research Direction / External Connection  
+**Status:** Informational  
+**Scope:** Compares ASCENT with StyleSpace / StyleCLIP and related papers to extract structural parallels, limits, and Paper 2 design hints  
+**Language:** Korean  
+**Relevance:** Primarily Paper 2; limited framing use for Paper 1  
+**Date:** 2026-04-25
+
+---
+
+## Quick Guide
+
+**Short summary:**  
+StyleSpace / StyleCLIP 계열은 pretrained model 내부의 풍부한 구조를 작은 control direction으로 조작할 수 있음을 보여주고, ASCENT는 이 직관이 LLM adaptation geometry에도 존재하는지를 묻는다.
+
+**Use in Paper 1:**  
+약한 framing과 해석 힌트까지만 허용하는 것이 맞다. 이 문서를 근거로 architecture claim을 앞당기면 안 된다.
+
+**Use in Paper 2:**  
+`shared basis + small controller`, `task editability`, `external alignment -> internal steering` 같은 설계 언어를 정리하는 데 직접 도움이 된다.
 
 ---
 
@@ -184,7 +199,7 @@ behavior_i = M(theta + u_i)
 또는 ASCENT식 표현으로:
 
 ```text
-output = M(S^base, c^slow, c^fast)
+output = M(S^base, c^slow, c^fast_t)
 ```
 
 즉 둘 다 "작은 steering signal이 큰 pretrained 구조를 특정 모드로 유도한다"는 해석이 가능하다.
@@ -667,7 +682,7 @@ ASCENT 관점 핵심:
 ASCENT 관점 핵심:
 
 - pretrained model 내부에 이미 다양한 capability가 있다는 관점을 강화한다.
-- `B_shared`가 크다는 직관과 닿는다.
+- `B_shared[T]`가 크다는 직관과 닿는다.
 
 ### 12.11 DeltaEdit
 
@@ -773,3 +788,12 @@ StyleGAN latent editing != LLM adaptation geometry
 ## 15. 한 줄 결론
 
 > StyleSpace / StyleCLIP과 그 후속 논문들은 "큰 pretrained model 내부의 풍부한 구조를 작은 control direction으로 조작할 수 있다"는 점을 반복해서 보여주며, 이 점에서 ASCENT와 깊게 닮아 있다. 다만 전자는 latent editing, 후자는 adaptation geometry이므로 직접 동일시하면 안 되고, 가장 생산적인 연결은 Paper 2의 `shared basis + small controller` 설계 방향이다.
+
+---
+
+## 16. 검증 메모
+
+확인 완료:
+
+- `v6.1` 표기 일관성 점검 완료: `B_model[T]`, `B_shared[T]`, `S^base`, `c^slow`, `c^fast_t`
+- Section 12의 12개 arXiv URL 검증 완료: 모든 링크가 `arxiv.org/abs/...` 기준 HTTP 200으로 응답함

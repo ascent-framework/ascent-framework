@@ -2,6 +2,9 @@
 
 **Document Type:** Future Research Direction / External Connection  
 **Status:** Non-committed (Not part of pre-registration)  
+**Scope:** Maps structural parallels between the EML operator result and ASCENT, with framing and hardware implications  
+**Language:** English  
+**Relevance:** Secondary future-direction note; useful for framing and later hardware discussion  
 **Related Paper:** Odrzywolek (2026), *All elementary functions from a single operator*, arXiv:2603.21852  
 **Date:** 2026-04-22
 

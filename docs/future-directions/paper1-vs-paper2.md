@@ -3,6 +3,8 @@
 **Document Type:** Clarification Note  
 **Status:** Informational  
 **Scope:** Explains the division of labor between ASCENT-G (Paper 1) and ASCENT-A (Paper 2)  
+**Language:** English  
+**Relevance:** Read first; defines the scope boundary for all future-direction notes  
 **Date:** 2026-04-25
 
 ---
