@@ -10,7 +10,7 @@
 
 ASCENT is a research framework proposing that **task adaptation in large language models is primarily a control problem over a pretrained capability substrate**, not a knowledge injection problem.
 
-The key observation: [TinyLoRA (Morris et al., 2026)](https://arxiv.org/abs/2602.04118) shows that training only **13 parameters** can recover 90%+ of full fine-tuning performance on hard reasoning benchmarks — but only with reinforcement learning, not supervised fine-tuning. This asymmetry suggests that RL is not injecting new knowledge, but rather **activating existing capabilities** already latent in the pretrained model.
+The key observation: [TinyLoRA (Morris et al., 2026)](https://arxiv.org/abs/2602.04118) shows that training only **13 parameters** can recover 90%+ of full fine-tuning performance on hard reasoning benchmarks, but only with reinforcement learning, not supervised fine-tuning. This asymmetry suggests that RL is not injecting new knowledge, but rather **activating existing capabilities** already latent in the pretrained model.
 
 This framework formalizes that intuition, provides a measurement methodology, and develops its architectural implications.
 
@@ -27,12 +27,12 @@ B_model[T] = B_shared[T] + B_adaptive[T]
 ```
 
 Where:
+
 - `T` = fixed task distribution (e.g., reasoning benchmarks)
-- `B_shared[T]` = information shared across tasks in T (resides in substrate)
+- `B_shared[T]` = information shared across tasks in `T` (resides in substrate)
 - `B_adaptive[T]` = task-specific control cost (what TinyLoRA measures)
 
-The hypothesis: `B_adaptive[T]` is surprisingly small for many task families,  
-because the pretrained substrate already contains the necessary capability structure.
+The hypothesis: `B_adaptive[T]` is surprisingly small for many task families, because the pretrained substrate already contains the necessary capability structure.
 
 ---
 
@@ -41,41 +41,47 @@ because the pretrained substrate already contains the necessary capability struc
 This GitHub organization contains:
 
 ```
-ascent-framework/     ← You are here (docs, theory, pre-registration)
-ascent-geometry/      ← Paper 1 experiments (H1a/b/c + H2)  [coming M3]
-ascent-arch/          ← Paper 2 architecture prototype       [coming M13+]
+ascent-framework/  You are here: docs, theory, pre-registration
+ascent-geometry/   Paper 1 experiments (H1a/b/c + H2) [planned]
+ascent-arch/       Paper 2 architecture prototype [planned]
 ```
 
 ### This Repository Structure
 
 ```
 ascent-framework/
-├── README.md
-├── ROADMAP.md
-├── .github/
-│   └── SETUP.md                      ← GitHub setup guide
-├── docs/
-│   ├── framework/
-│   │   ├── v6.1.md                   ← Canonical framework document
-│   │   └── evolution.md              ← v1 → v6.1 version history
-│   ├── preregistration/
-│   │   └── v1.2.md                   ← Current preregistration draft
-│   ├── paper1/
-│   │   ├── outline.md                ← Paper 1 structure
-│   │   └── evidence-mapping.md       ← Prior work supporting ASCENT
-│   ├── exploration/
-│   │   └── future-directions.md      ← Architecture synthesis (non-registered)
-│   └── archive/                      ← Previous project documents
-└── .gitignore
+|- README.md
+|- ROADMAP.md
+|- .github/
+|  `- SETUP.md
+|- docs/
+|  |- index.md
+|  |- framework/
+|  |  |- v6.1.md
+|  |  `- evolution.md
+|  |- preregistration/
+|  |  |- v1.2.md
+|  |  `- v1.3.md
+|  |- paper1/
+|  |  |- outline.md
+|  |  `- evidence-mapping.md
+|  |- exploration/
+|  |  `- compute-options.md
+|  |- future-directions/
+|  |  |- index.md
+|  |  |- eml-connection.md
+|  |  |- paper1-vs-paper2.md
+|  |  `- stylespace-styleclip-connection.md
+|  `- archive/
+`- .gitignore
 ```
 
-Current repo note: the active pre-registration file is `docs/preregistration/v1.2.md`,
-and archived predecessor documents are stored under
-`docs/archive/operator-coordinate-compression/`.
-ASCENT note archives are preserved under
-`docs/archive/ascent-framework-notes/`.
-The temporary draft workspace has been absorbed into `docs/` and retained only
-through the canonical archive materials above.
+Current repo note:
+
+- the current preregistration reference is `docs/preregistration/v1.3.md`,
+- future-direction notes live under `docs/future-directions/`,
+- archived predecessor documents are stored under `docs/archive/operator-coordinate-compression/`,
+- earlier ASCENT note archives are preserved under `docs/archive/ascent-framework-notes/`.
 
 ---
 
@@ -83,9 +89,9 @@ through the canonical archive materials above.
 
 | Paper | Title | Status |
 |-------|-------|--------|
-| **ASCENT-G** | *Adaptation Geometry in Pretrained Language Models* | 🔵 Active |
-| **ASCENT-A** | *Small Controllers over Structured Capabilities* | 🔲 Planned (M13+) |
-| **ASCENT-D** | *Developmental Substrate Composition* | 🔲 Future (M25+) |
+| **ASCENT-G** | *Adaptation Geometry in Pretrained Language Models* | Active |
+| **ASCENT-A** | *Small Controllers over Structured Capabilities* | Planned (M13+) |
+| **ASCENT-D** | *Developmental Substrate Composition* | Future (M25+) |
 
 ---
 
@@ -99,7 +105,7 @@ through the canonical archive materials above.
 | **H1c** | Directions align with interpretable features | Exploratory |
 | **H3** | Layer weights show statistical self-similarity | Exploratory |
 
-Full methodology with falsification criteria: [`docs/preregistration/v1.2.md`](docs/preregistration/v1.2.md)
+Full methodology with falsification criteria: [`docs/preregistration/v1.3.md`](docs/preregistration/v1.3.md)
 
 ---
 
@@ -123,13 +129,15 @@ S = { S^fast, S^slow, S^base, S^meta }
 ## Key Equations
 
 **Space-time dynamics:**
+
 ```
-z^(ℓ+1, t) = F_θ(z^(ℓ,t); γ_ℓ, c^slow)           [depth axis]
-z^(ℓ, t+1) = G_φ(z^(ℓ,t), x_t, m^(ℓ,t), c^fast_t) [time axis]
-m^(ℓ, t)   = Read(q^(ℓ,t), L^(ℓ))                  [memory access]
+z^(l+1, t) = F_theta(z^(l, t); theta_shared, c^slow)   [depth axis]
+z^(l, t+1) = G_phi(z^(l, t), x_t, m^(l, t), c^fast_t)  [time axis]
+m^(l, t)   = Read(q^(l, t), L^(l))                     [memory access]
 ```
 
 **Information decomposition:**
+
 ```
 B_model[T] = B_shared[T] + B_adaptive[T]
 ```
@@ -141,9 +149,9 @@ B_model[T] = B_shared[T] + B_adaptive[T]
 | Prior Work | ASCENT Connection |
 |-----------|------------------|
 | TinyLoRA (Morris et al., 2026) | Small `B_adaptive` empirical evidence |
-| Universal Transformer (2018) | Shared `F_θ` across depth |
+| Universal Transformer (2018) | Shared `F_theta` across depth |
 | ALBERT (2019) | Cross-layer parameter sharing |
-| Mamba (2023) | Selective time dynamics `G_φ` |
+| Mamba (2023) | Selective time dynamics `G_phi` |
 | Anthropic SAE (2024+) | Interpretable substrate structure |
 | Ansuini et al. (2019) | Low intrinsic dimension |
 
@@ -172,9 +180,9 @@ Full plan: [`ROADMAP.md`](ROADMAP.md)
 
 ```
 Framework version:    v6.1 (stable)
-Pre-registration:     v1.2 (draft, OSF pending)
-Experiments:          Phase 0 — Foundation
-Current phase:        Setup + OSF registration
+Pre-registration:     v1.3 (OSF public)
+Experiments:          Phase 0 / Foundation
+Current phase:        Setup + pilot preparation
 ```
 
 ---
@@ -196,5 +204,5 @@ Views and research are personal and do not represent any employer.*
 
 ## License
 
-- Code: [MIT License](LICENSE)  
+- Code: [MIT License](LICENSE)
 - Documents: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

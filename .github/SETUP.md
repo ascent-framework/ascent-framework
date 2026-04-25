@@ -1,12 +1,13 @@
-# SETUP.md — GitHub Organization Setup Guide
+# SETUP.md - GitHub Organization Setup Guide
 
-Step-by-step guide to creating the ASCENT GitHub organization and repos.
+Historical bootstrap guide for the initial ASCENT repository setup.
+Some steps below reflect the April 2026 bootstrapping state and are preserved as project record rather than current operational truth.
 
 ---
 
 ## Step 1: Create GitHub Organization (5 minutes)
 
-1. Go to: github.com → Your profile → (+) → New organization
+1. Go to: `github.com` -> your profile -> `+` -> New organization
 2. Organization name: `ascent-framework` (or `ascent-research` if taken)
 3. Plan: Free
 4. Contact email: your email
@@ -18,7 +19,7 @@ Step-by-step guide to creating the ASCENT GitHub organization and repos.
 
 ## Step 2: Create Three Repositories (10 minutes)
 
-### Repo 1: ascent-framework (this repo — main docs)
+### Repo 1: ascent-framework (this repo; main docs)
 
 ```
 Name:        ascent-framework
@@ -40,11 +41,11 @@ Initialize:  Yes
 License:     MIT
 ```
 
-### Repo 3: ascent-arch (Paper 2 — create now, populate later)
+### Repo 3: ascent-arch (Paper 2; create now, populate later)
 
 ```
 Name:        ascent-arch
-Description: ASCENT-A: Small Controllers over Structured Capabilities (Paper 2 — planned)
+Description: ASCENT-A: Small Controllers over Structured Capabilities (Paper 2; planned)
 Visibility:  Public
 Initialize:  Yes
 .gitignore:  Python
@@ -63,9 +64,9 @@ git clone https://github.com/ascent-framework/ascent-framework.git
 cd ascent-framework
 
 # Create directory structure
-mkdir -p docs/{framework,preregistration,paper1,exploration,archive,archive/operator-coordinate-compression}
+mkdir -p docs/{framework,preregistration,paper1,exploration,future-directions,archive,archive/operator-coordinate-compression}
 
-# Copy files from Claude-generated documents
+# Copy files from generated documents
 cp [downloaded files] .
 
 # First commit
@@ -77,9 +78,9 @@ git push origin main
 ### Recommended branch structure
 
 ```
-main          ← stable documents
-dev           ← active work, drafts
-paper1        ← Paper 1 specific work (create M11)
+main          stable documents
+dev           active work, drafts
+paper1        Paper 1 specific work (create M11)
 ```
 
 ---
@@ -90,15 +91,15 @@ Transfer key documents from `operator-coordinate-compression` to `ascent-framewo
 
 ```bash
 # Files worth keeping:
-docs/theory/turboquant_llm_quantization_architecture.md  → archive/operator-coordinate-compression/
-docs/theory/operator_view.md                             → archive/operator-coordinate-compression/
-docs/research_direction_review.md                        → archive/operator-coordinate-compression/
-docs/patent/invention_summary.md                         → archive/operator-coordinate-compression/
-docs/patent/prior_art_mapping.md                         → archive/operator-coordinate-compression/
-docs/patent/claim_candidates.md                          → archive/operator-coordinate-compression/
+docs/theory/turboquant_llm_quantization_architecture.md  -> archive/operator-coordinate-compression/
+docs/theory/operator_view.md                             -> archive/operator-coordinate-compression/
+docs/research_direction_review.md                        -> archive/operator-coordinate-compression/
+docs/patent/invention_summary.md                         -> archive/operator-coordinate-compression/
+docs/patent/prior_art_mapping.md                         -> archive/operator-coordinate-compression/
+docs/patent/claim_candidates.md                          -> archive/operator-coordinate-compression/
 
 # Then archive the old repo:
-# GitHub Settings → Danger Zone → Archive this repository
+# GitHub Settings -> Danger Zone -> Archive this repository
 ```
 
 Add `docs/archive/README.md` explaining what's there and why.
@@ -109,25 +110,26 @@ Current archive destination: `docs/archive/operator-coordinate-compression/`.
 
 ## Step 5: Connect OSF to GitHub
 
-1. Create OSF account: osf.io
-2. Create new project: "ASCENT Framework"
-3. Add description (copy from README.md introduction)
-4. Add-ons → GitHub → Connect `ascent-framework` repo
-5. Upload pre-registration v1.2 as a File (PDF preferred)
-6. Register: Create Registration → Open-Ended Registration
+1. Create OSF account: `osf.io`
+2. Create new project: `ASCENT Framework`
+3. Add description (copy from `README.md` introduction)
+4. Add-ons -> GitHub -> connect `ascent-framework` repo
+5. Upload the current pre-registration version as a file (PDF preferred)
+6. Register: Create Registration -> Open-Ended Registration
 7. Wait 24-48h for public URL
 
 **OSF URL format:** `osf.io/[5-character-code]`
 
 Add this URL to:
-- `docs/preregistration/v1.2.md` (top of file)
+
+- `docs/preregistration/v1.3.md` (top of file)
 - `README.md` (pre-registration badge)
 
 ---
 
 ## Step 6: Add GitHub Badges to README
 
-Add these to the top of README.md (after the title):
+Add these to the top of `README.md` (after the title):
 
 ```markdown
 [![OSF Pre-registration](https://img.shields.io/badge/OSF-Pre--registered-blue)](https://osf.io/YOUR_URL)
@@ -207,7 +209,7 @@ git pull
 git checkout -b feature/[task-name]
 
 # End each session:
-git add -p          # review changes
+git add -p
 git commit -m "descriptive message"
 git push
 
@@ -254,7 +256,7 @@ print(model.get_memory_footprint())
 [ ] ascent-framework populated with 6 documents
 [ ] Old repo archived (operator-coordinate-compression)
 [ ] OSF account created
-[ ] Pre-registration v1.2 uploaded to OSF (pending public URL)
+[ ] Current pre-registration uploaded to OSF
 [ ] ascent-geometry structure created
 [ ] requirements.txt installed
 [ ] Qwen2.5-1.5B loads successfully on RTX 4090

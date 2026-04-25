@@ -5,10 +5,11 @@
 ## Reading Order
 
 1. `framework/v6.1.md`
-2. `preregistration/v1.2.md`
+2. `preregistration/v1.3.md`
 3. `paper1/evidence-mapping.md`
 4. `paper1/outline.md`
-5. `archive/README.md`
+5. `future-directions/index.md`
+6. `archive/README.md`
 
 ## Sections
 
@@ -19,7 +20,8 @@
 
 ### Pre-registration
 
-- `preregistration/v1.2.md`: current preregistration draft and methodology
+- `preregistration/v1.3.md`: current preregistration reference and methodology
+- `preregistration/v1.2.md`: earlier preregistration snapshot kept for change tracking
 
 ### Paper Planning
 
@@ -28,12 +30,14 @@
 
 ### Exploration
 
-- `exploration/compute-options.md`: registered model lineup (v1.3) and free GPU platform analysis (Kaggle, Colab)
+- `exploration/compute-options.md`: operational exploration note on registered model lineup and free GPU platform analysis
 
 ### Future Directions
 
 - `future-directions/index.md`: canonical hub for long-range architecture and framework extensions (not part of Paper 1 registered claims)
+- `future-directions/paper1-vs-paper2.md`: scope boundary between evidence-first Paper 1 and architecture-first Paper 2
 - `future-directions/eml-connection.md`: EML analogy, exploratory extension, and speculative hardware implications
+- `future-directions/stylespace-styleclip-connection.md`: Korean note on StyleSpace / StyleCLIP parallels, limits, and Paper 2 relevance
 
 ### Archive
 

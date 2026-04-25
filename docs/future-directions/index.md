@@ -4,6 +4,13 @@ This directory is the canonical home for ASCENT future-direction notes.
 
 These documents are part of the repository's long-range design record, but they are **not** part of the registered claim set for Paper 1. Their role is to preserve architectural and conceptual directions without mixing them into the empirical core.
 
+## Quick Guide
+
+- Read `paper1-vs-paper2.md` first if you need the scope boundary between evidence and architecture.
+- Read `eml-connection.md` for an English external-analogy note tied to framing and hardware direction.
+- Read `stylespace-styleclip-connection.md` for a Korean note on editing-style analogies and why they matter more for Paper 2 than Paper 1.
+- Treat this directory as design-space documentation, not as validated empirical evidence.
+
 ---
 
 ## 1. Role of This Directory
@@ -100,11 +107,13 @@ Self-similarity language should remain conservative:
 
 ## 6. Current Notes
 
-- [EML Operator and ASCENT](./eml-connection.md): Structural analogy around reducibility, basin-of-attraction intuition, operator reinterpretation, and speculative hardware implications.
-- [Paper 1 and Paper 2 Explained](./paper1-vs-paper2.md): Detailed explanation of why ASCENT separates geometry verification from architecture construction, with diagrams and equations.
-- [StyleSpace / StyleCLIP and ASCENT](./stylespace-styleclip-connection.md): Korean note on the structural parallels, limits of the analogy, and why the connection matters more for Paper 2 than Paper 1.
+| Document | Role | Language | Relevance |
+|----------|------|----------|-----------|
+| [Paper 1 and Paper 2 Explained](./paper1-vs-paper2.md) | Scope note separating measurement from architecture | EN | Read first; sets the rule for using the rest of this directory |
+| [EML Operator and ASCENT](./eml-connection.md) | External connection note on reducibility, operator framing, and hardware implications | EN | Secondary note; useful for framing and later architecture discussion |
+| [StyleSpace / StyleCLIP and ASCENT](./stylespace-styleclip-connection.md) | External connection note on controllable directions, editability, and analogy limits | KR | Secondary note; more relevant to Paper 2 than Paper 1 |
 
-Additional notes such as `sage.md` or `mythos-connection.md` should live in this same directory.
+Planned future-direction notes should be added here only when they have an actual file and a defined role.
 
 ---
 

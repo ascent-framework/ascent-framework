@@ -132,63 +132,26 @@ B_model[T] = B_shared[T] + B_adaptive[T]
 
 ---
 
-## 5. 구조적으로 닮은 점
+## 5. 구조적으로 닮은 점 (개요)
+
+두 계열은 여러 축에서 닮아 있는데, 본격적인 정리는 Section 11에서 6개 핵심 개념으로 압축한다. 여기서는 가장 두드러진 두 축만 짧게 짚는다.
 
 ### 5.1 능력은 이미 안에 있다
 
-StyleSpace 쪽의 중요한 메시지는 이것이다.
+StyleSpace 쪽의 핵심 메시지:
 
 ```text
 semantic capability는 editing 순간 새로 생성되는 것이 아니라
 이미 generator 내부에 잠재적으로 들어 있다.
 ```
 
-ASCENT도 같은 질문을 던진다.
-
-```text
-task capability는 adaptation 시점에 새로 주입되는가,
-아니면 pretrained substrate 내부에 이미 존재하고
-작은 control이 그것을 활성화하는가?
-```
+ASCENT의 substrate framing과 같은 형태의 질문이다 — task capability가 adaptation 시점에 *주입*되는가, 아니면 pretrained substrate에 이미 존재하고 작은 control이 그것을 *활성화*하는가.
 
 ### 5.2 작은 조작이 큰 변화를 만든다
 
-StyleSpace에서는 소수의 style channel이나 특정 방향 조작만으로 큰 semantic 변화가 나온다.
+StyleSpace에서 소수의 style channel만으로 큰 semantic 변화가 나오는 것처럼, ASCENT에서도 TinyLoRA처럼 매우 작은 update가 큰 task-level 효과를 낼 수 있는지를 묻는다.
 
-ASCENT에서는 TinyLoRA가 비슷한 질문을 낳는다.
-
-```text
-매우 작은 update가
-왜 큰 task-level 성능 변화를 만들 수 있는가?
-```
-
-### 5.3 좋은 basis가 중요하다
-
-StyleSpace가 latent basis engineering 문제라면, ASCENT도 장기적으로는 adaptation basis engineering 문제로 읽을 수 있다.
-
-```text
-u_i ~= A c_i
-```
-
-여기서:
-
-- `u_i`는 task `i`의 update vector
-- `A`는 shared adaptation basis
-- `c_i`는 작은 task code
-
-### 5.4 semantic alignment 가능성
-
-StyleCLIP은 텍스트를 latent direction에 연결한다.
-
-ASCENT H1c와 직접 같지는 않지만 방향은 비슷하다.
-
-```text
-StyleCLIP:
-  text -> style direction
-
-ASCENT H1c:
-  task or update direction -> interpretable feature alignment
-```
+> 더 광범위한 공통 축 (basis 중요성, semantic alignment 가능성, sparse access 등)은 Section 10의 후속 논문 패턴 정리와 Section 11의 6개 핵심 개념에서 다룬다. 본 섹션은 그 두 정리의 도입부 역할만 한다.
 
 ---
 
@@ -275,6 +238,14 @@ ASCENT에는 아직 그에 대응되는 모듈이 없다.
 - task description embedding
 - reward signal
 - mechanistic interpretability signal
+
+### 7.5 이 analogy를 너무 강하게 끌면 ASCENT가 길을 잃는다
+
+위의 4가지 차이를 모두 인정한 후에도, analogy 자체가 만들어내는 두 가지 추가 위험이 있다.
+
+첫째, update geometry를 latent editing처럼 "고정 basis 위의 좌표 이동"으로 상상하게 된다. 그러나 ASCENT에서는 update vector가 어떤 basis에 살고 있는지, 또는 안정된 basis가 존재하기는 하는지 자체가 H1a의 열린 질문이다. StyleSpace의 직관을 미리 가져오면 이 기본 질문을 건너뛰게 된다.
+
+둘째, StyleCLIP-like external steering 구조 (text → direction)를 너무 빨리 가정하면 "shared structure가 존재하는가"라는 H1a/H1b의 더 근본적인 질문이 보이지 않게 된다. Section 8과 Section 11의 design language는 이 기반 질문이 어느 정도 답해진 후의 어휘로만 사용해야 한다.
 
 ---
 
@@ -597,6 +568,8 @@ ASCENT에서는 small controller, sparse access, feature gating과 연결된다.
 StyleCLIP에서는 CLIP이 이 역할을 했다.  
 ASCENT에서는 future controller prior나 task-conditioned steering으로 이어질 수 있다.
 
+다만 한 가지 비대칭에 주의해야 한다. StyleCLIP은 외부 신호로 internal direction을 *찾는* 문제이고, ASCENT의 H1c는 internal direction이 어느 정도 *해석 가능한지*를 묻는 문제다. 방향성이 반대이므로 두 질문을 같은 것으로 취급하면 안 된다. 두 질문이 만나는 미래의 지점은 Paper 2 이후의 controller design이다.
+
 ---
 
 ## 12. 논문별로 보면 무엇이 중요한가
@@ -720,9 +693,11 @@ ASCENT 관점 핵심:
 
 ## 13. ASCENT 관점에서의 재분류
 
+분류 기준은 단일하지 않으며 세 카테고리는 서로 겹친다. 각 카테고리는 "ASCENT의 어떤 질문을 가장 직접적으로 비추는가"를 기준으로 묶인다.
+
 ### A. 매우 직접적
 
-ASCENT의 중심 질문과 거의 같은 축에 있는 논문:
+**기준:** ASCENT의 H1a / H1b / H1c가 묻는 것과 같은 형태의 질문 — shared direction의 존재, sparse localized control, small adaptation으로 큰 shift, text-guided steering — 을 직접 다루는 논문.
 
 - GANSpace
 - StyleSpace Analysis
@@ -739,6 +714,8 @@ ASCENT의 중심 질문과 거의 같은 축에 있는 논문:
 
 ### B. 간접적이지만 중요함
 
+**기준:** ASCENT의 중심 hypothesis를 직접 답하지는 않지만, 좋은 조작 공간, 조건부 control, editability를 보존하는 표현 같은 supporting 개념을 제공해 Paper 1의 framing과 Paper 2의 설계 어휘를 풍부하게 만드는 논문.
+
 - InterFaceGAN
 - Voynov & Babenko
 - StyleFlow
@@ -753,13 +730,15 @@ ASCENT의 중심 질문과 거의 같은 축에 있는 논문:
 
 ### C. Paper 2에서 특히 중요함
 
+**기준:** `shared basis + small controller`라는 ASCENT-A 설계 그림과 직접 매핑되는 논문. Paper 1의 hypothesis 검증보다는 Paper 2의 architecture 결정에 영향을 준다.
+
 - StyleSpace Analysis
 - StyleCLIP
 - StyleMC
 - StyleDomain
 - StyleFlow
 
-이 논문들은 `shared basis + small controller`라는 ASCENT-A 설계 그림과 가장 잘 맞는다.
+> 참고: A와 C가 겹치는 것 (StyleSpace Analysis, StyleCLIP, StyleDomain)은 우연이 아니다. Paper 1의 hypothesis와 Paper 2의 설계가 같은 구조적 직관을 공유하기 때문이다.
 
 ---
 
