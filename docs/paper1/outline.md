@@ -20,18 +20,20 @@ Recent work shows that task adaptation via reinforcement learning can achieve st
 
 **Structure:**
 1. The TinyLoRA paradox: why does 13-parameter RL adaptation work when 13-parameter SFT does not?
-2. Optional opening framing: reducibility analogies such as NAND or EML as rhetoric only, not as evidence.
-3. Two interpretations:
+2. Two interpretations:
    - Standard: RL is more information-efficient per parameter.
    - ASCENT: RL accesses existing capabilities; SFT tries to inject new ones.
-4. This interpretation predicts a testable geometric property: updates should share a structured subspace.
-5. We test this prediction with pre-registered experiments.
-6. Summary of findings [TBD].
-7. Contribution statement:
+3. This interpretation predicts a testable geometric property: updates should share a structured subspace.
+4. We test this prediction with pre-registered experiments.
+5. Summary of findings [TBD].
+6. Contribution statement:
    - First geometric analysis of TinyLoRA update vectors.
    - Pre-registered falsification framework.
    - `B_shared / B_adaptive` decomposition.
    - Implications for architecture as a forward pointer, not a tested Paper 1 claim.
+
+**Writing note:**
+- TODO: If the introduction benefits from a broader opening, add a 2-3 sentence reducibility analogy using NAND / EML. Keep it rhetorical only, and keep the TinyLoRA paradox as the primary motivation. See `docs/future-directions/eml-connection.md`.
 
 **Key framing sentence (draft):**
 > "We reframe task adaptation as a control problem over a pretrained capability substrate, and ask whether the geometry of update vectors provides evidence for this view."
@@ -42,17 +44,19 @@ Recent work shows that task adaptation via reinforcement learning can achieve st
 
 **Structure:**
 - Section 2.1 Outlier-aware and post-training quantization (SmoothQuant, GPTQ)
-- Section 2.2 Rotation-based quantization and KV compression (QuaRot, SpinQuant, TurboQuant, SpectralQuant)
-- Section 2.3 Parameter-efficient fine-tuning and operation sharing (LoRA, TinyLoRA, ALBERT, Universal Transformer)
-- Section 2.4 Mechanistic interpretability and capability discovery (SAE)
-- Section 2.5 Representation geometry and scale behavior (Ansuini et al., Kaplan et al.)
-- Section 2.6 SSM / alternative architectures (Mamba, S4)
-- Section 2.7 Native low-bit training, framing only (BitNet, Bonsai)
+- Section 2.2 Rotation-based quantization (QuaRot, SpinQuant, SpectralQuant)
+- Section 2.3 Online KV compression (TurboQuant, QJL, PolarQuant)
+- Section 2.4 Parameter-efficient fine-tuning and operation sharing (LoRA, TinyLoRA, ALBERT, Universal Transformer)
+- Section 2.5 Mechanistic interpretability and capability discovery (SAE)
+- Section 2.6 Representation geometry and scale behavior (Ansuini et al., Kaplan et al.)
+- Section 2.7 SSM / alternative architectures (Mamba, S4)
+- Section 2.8 Native low-bit training, framing only (BitNet, Bonsai)
 
 Source: expand from `docs/paper1/evidence-mapping.md`
 
-**Scope note:**
-- EML, if mentioned at all, appears only as a brief structural-reducibility analogy in the introduction or a single sentence in related work, not as technical evidence.
+**Writing notes:**
+- TODO: Add one short paragraph on BitNet / Bonsai as framing support only. Do not use them as evidence for H1a, H1b, or H2.
+- TODO: If EML is cited in related work, keep it to a single sentence on structural reducibility, not technical evidence.
 
 **Key paragraph:**
 > "Unlike prior work that analyzes geometry for compression, we analyze geometry as evidence for a functional hypothesis about adaptation. And unlike interpretability work that decomposes representations, we decompose update directions as a complementary lens."
@@ -116,7 +120,6 @@ Source: condense from `docs/preregistration/v1.3.md`
 - Section 6.2 `B_adaptive` magnitude trends: does harder task imply larger `||u_i||`?
 - Section 6.3 Intrinsic dimension estimate (TwoNN)
 - Section 6.4 H3: Layer self-similarity (Wasserstein distances)
-- Section 6.5 Optional basin-of-attraction recovery check (non-registered; only if time permits)
 
 **Figure 5:** Magnitude `||u_i||` vs. task difficulty (correlation plot)
 

@@ -113,7 +113,7 @@ Alternative:
   (indicating no basin structure; undermines H1a's geometric claim)
 ```
 
-**Status:** Exploratory. Not part of Paper 1 pre-registration. Consider for Paper 1 Section 6 only if Phase 2 completes with time remaining.
+**Status:** Exploratory. Not part of Paper 1 pre-registration. Default planning assumption: do not add this to the current Paper 1 roadmap or registered analysis set. Consider it only if the main paper draft is already stable and surplus time remains.
 
 ### 3.3 Parallel 3 - Operator-Algebraic Interpretation
 
@@ -248,11 +248,15 @@ To prevent overreach:
 |----------|-------|-------|
 | Paper 1 Section 1 (Intro) | One-paragraph rhetorical parallel | Light |
 | Paper 1 Section 2 (Related Work) | Brief citation in structural reducibility context | Minimal |
-| Paper 1 Section 6 (Exploratory) | Basin-of-attraction experiment, if time permits | Conditional |
+| Paper 1 Section 6 (Exploratory) | Basin-of-attraction experiment only after main writing goals are met | Deferred / conditional |
 | Paper 2 Section 4 (Unified framework) | Operator-view formalization | Medium |
 | Paper 2 Section 7 (Discussion) | Connection to combinatory logic / universal primitives | Light |
 | Patent filings | Independent hardware claim themes | Separate track |
 | OSF pre-registration | Not used | None |
+
+Current planning note:
+
+- This document does not change the Paper 1 preregistration, hypothesis set, methodology, `ascent-geometry` code plan, or roadmap milestones.
 
 ---
 
