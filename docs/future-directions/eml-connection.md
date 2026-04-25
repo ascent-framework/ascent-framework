@@ -175,7 +175,7 @@ This operator view is a reinterpretation, not a new mathematical structure. It h
 
 ---
 
-## 5. Hardware Implications (Samsung Custom SoC Angle)
+## 5. Hardware Implications (Custom SoC Angle)
 
 This section is speculative but potentially patent-relevant.
 
@@ -224,7 +224,7 @@ These claims are independent of whether ASCENT-G succeeds. They respond to a bro
 
 ### 5.4 What not to claim
 
-- Do not claim Samsung NPU should become an EML machine.
+- Do not claim a production NPU should become an EML machine.
 - Do not claim EML solves LLM inference efficiency.
 - Do not claim ASCENT's substrate is an EML-like structure.
 
@@ -302,4 +302,4 @@ Each document is a lens on ASCENT's central claim from a different direction. No
 
 ---
 
-*This document is informational. It does not commit ASCENT to run any experiment described here or to file any patent claim referenced here. Before acting on hardware or patent content, consult Samsung IP counsel or the relevant internal IP team.*
+*This document is informational. It does not commit ASCENT to run any experiment described here or to file any patent claim referenced here. Before acting on hardware or patent content, consult internal IP counsel or the relevant legal/IP team.*

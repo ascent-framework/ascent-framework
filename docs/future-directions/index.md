@@ -101,6 +101,8 @@ Self-similarity language should remain conservative:
 ## 6. Current Notes
 
 - [EML Operator and ASCENT](./eml-connection.md): Structural analogy around reducibility, basin-of-attraction intuition, operator reinterpretation, and speculative hardware implications.
+- [Paper 1 and Paper 2 Explained](./paper1-vs-paper2.md): Detailed explanation of why ASCENT separates geometry verification from architecture construction, with diagrams and equations.
+- [StyleSpace / StyleCLIP and ASCENT](./stylespace-styleclip-connection.md): Korean note on the structural parallels, limits of the analogy, and why the connection matters more for Paper 2 than Paper 1.
 
 Additional notes such as `sage.md` or `mythos-connection.md` should live in this same directory.
 
