@@ -5,7 +5,7 @@ It serves as intellectual history and is preserved for transparency.
 
 For the current canonical framework statement, see `v6.1.md`.
 For architecture-facing synthesis that was previously scattered through the draft
-workspace, see `../exploration/future-directions.md`.
+workspace, see `../future-directions/index.md`.
 
 ---
 

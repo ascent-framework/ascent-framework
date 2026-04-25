@@ -28,8 +28,12 @@
 
 ### Exploration
 
-- `exploration/future-directions.md`: non-canonical architecture synthesis and component-prior map (not part of Paper 1 registered claims)
 - `exploration/compute-options.md`: registered model lineup (v1.3) and free GPU platform analysis (Kaggle, Colab)
+
+### Future Directions
+
+- `future-directions/index.md`: canonical hub for long-range architecture and framework extensions (not part of Paper 1 registered claims)
+- `future-directions/eml-connection.md`: EML analogy, exploratory extension, and speculative hardware implications
 
 ### Archive
 
