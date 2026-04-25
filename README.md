@@ -68,10 +68,13 @@ ascent-framework/
 |  |- exploration/
 |  |  `- compute-options.md
 |  |- future-directions/
+|  |  |- README.md
 |  |  |- index.md
-|  |  |- eml-connection.md
-|  |  |- paper1-vs-paper2.md
-|  |  `- stylespace-styleclip-connection.md
+|  |  |- scope/
+|  |  |  `- paper1-vs-paper2.md
+|  |  `- connections/
+|  |     |- eml-connection.md
+|  |     `- stylespace-styleclip-connection.md
 |  `- archive/
 `- .gitignore
 ```

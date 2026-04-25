@@ -35,9 +35,9 @@
 ### Future Directions
 
 - `future-directions/index.md`: canonical hub for long-range architecture and framework extensions (not part of Paper 1 registered claims)
-- `future-directions/paper1-vs-paper2.md`: scope boundary between evidence-first Paper 1 and architecture-first Paper 2
-- `future-directions/eml-connection.md`: EML analogy, exploratory extension, and speculative hardware implications
-- `future-directions/stylespace-styleclip-connection.md`: Korean note on StyleSpace / StyleCLIP parallels, limits, and Paper 2 relevance
+- `future-directions/scope/paper1-vs-paper2.md`: scope boundary between evidence-first Paper 1 and architecture-first Paper 2
+- `future-directions/connections/eml-connection.md`: EML analogy, exploratory extension, and speculative hardware implications
+- `future-directions/connections/stylespace-styleclip-connection.md`: Korean note on StyleSpace / StyleCLIP parallels, limits, and Paper 2 relevance
 
 ### Archive
 

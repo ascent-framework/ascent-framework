@@ -33,7 +33,7 @@ Recent work shows that task adaptation via reinforcement learning can achieve st
    - Implications for architecture as a forward pointer, not a tested Paper 1 claim.
 
 **Writing note:**
-- TODO: If the introduction benefits from a broader opening, add a 2-3 sentence reducibility analogy using NAND / EML. Keep it rhetorical only, and keep the TinyLoRA paradox as the primary motivation. See `docs/future-directions/eml-connection.md`.
+- TODO: If the introduction benefits from a broader opening, add a 2-3 sentence reducibility analogy using NAND / EML. Keep it rhetorical only, and keep the TinyLoRA paradox as the primary motivation. See `docs/future-directions/connections/eml-connection.md`.
 
 **Key framing sentence (draft):**
 > "We reframe task adaptation as a control problem over a pretrained capability substrate, and ask whether the geometry of update vectors provides evidence for this view."

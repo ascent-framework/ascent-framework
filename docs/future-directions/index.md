@@ -6,9 +6,9 @@ These documents are part of the repository's long-range design record, but they 
 
 ## Quick Guide
 
-- Read `paper1-vs-paper2.md` first if you need the scope boundary between evidence and architecture.
-- Read `eml-connection.md` for an English external-analogy note tied to framing and hardware direction.
-- Read `stylespace-styleclip-connection.md` for a Korean note on editing-style analogies and why they matter more for Paper 2 than Paper 1.
+- Read `scope/paper1-vs-paper2.md` first if you need the scope boundary between evidence and architecture.
+- Read `connections/eml-connection.md` for an English external-analogy note tied to framing and hardware direction.
+- Read `connections/stylespace-styleclip-connection.md` for a Korean note on editing-style analogies and why they matter more for Paper 2 than Paper 1.
 - Treat this directory as design-space documentation, not as validated empirical evidence.
 
 ---
@@ -107,11 +107,17 @@ Self-similarity language should remain conservative:
 
 ## 6. Current Notes
 
+### Structure
+
+- `scope/`: documents that define what belongs in Paper 1 versus later architecture work
+- `connections/`: external analogy notes and design-space references
+- `index.md` and `README.md`: entry points for browsing this directory
+
 | Document | Role | Language | Relevance |
 |----------|------|----------|-----------|
-| [Paper 1 and Paper 2 Explained](./paper1-vs-paper2.md) | Scope note separating measurement from architecture | EN | Read first; sets the rule for using the rest of this directory |
-| [EML Operator and ASCENT](./eml-connection.md) | External connection note on reducibility, operator framing, and hardware implications | EN | Secondary note; useful for framing and later architecture discussion |
-| [StyleSpace / StyleCLIP and ASCENT](./stylespace-styleclip-connection.md) | External connection note on controllable directions, editability, and analogy limits | KR | Secondary note; more relevant to Paper 2 than Paper 1 |
+| [Paper 1 and Paper 2 Explained](./scope/paper1-vs-paper2.md) | Scope note separating measurement from architecture | EN | Read first; sets the rule for using the rest of this directory |
+| [EML Operator and ASCENT](./connections/eml-connection.md) | External connection note on reducibility, operator framing, and hardware implications | EN | Secondary note; useful for framing and later architecture discussion |
+| [StyleSpace / StyleCLIP and ASCENT](./connections/stylespace-styleclip-connection.md) | External connection note on controllable directions, editability, and analogy limits | KR | Secondary note; more relevant to Paper 2 than Paper 1 |
 
 Planned future-direction notes should be added here only when they have an actual file and a defined role.
 
